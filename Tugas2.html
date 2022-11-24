@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TUGAS TABLE TEMAN P03</title>
+  <link rel="stylesheet" href="Tugas.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="mode">
+    
+  </div>
+  <div class="conteiner">
+    <table  border="1px solid black" cellspacing="0" style="width: 90%;" onclick="klikIni()" >
+      <tr class="container">
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Aksi</th>
+      <tr id="row__1">
+        <td class="nama_mhs">Salman Abdullah Al Baaqir</td>
+        <td class="alamat">Tegal</td>
+        <td class="hapus" id="hapus__1">Hapus</td>
+      </tr> 
+      <tr id="row__2">
+        <td class="nama_mhs">Angga Saputra</td>
+        <td class="alamat">Tegal </td>
+        <td class="hapus"id="hapus__2">Hapus</td>
+      </tr>
+      <tr id="row__3">
+        <td class="nama_mhs">Jundi Nur Muhtadin</td>
+        <td class="alamat">Karawang</td>
+        <td class="hapus" id="hapus__3">Hapus</td>
+      </tr>
+      <tr id="row__4">
+        <td class="nama_mhs">Mahariana</td>
+        <td class="alamat">Indramayu</td>
+        <td class="hapus" id="hapus__4">Hapus</td> 
+      </tr>
+      <tr id="row__5">
+        <td class="nama_mhs">Dwi Febrianti</td>
+        <td class="alamat">Tegal</td>
+        <td class="hapus" id="hapus__5">Hapus</td>
+      </tr>
+      <tr id="row__6">
+        <td class="nama_mhs">Muhammad Tharif Habiburrahman</td>
+        <td class="alamat">Tangerang</td>
+        <td class="hapus" id="hapus__6">Hapus</td>
+      </tr>
+      <tr id="row__7">
+        <td class="nama_mhs">Filan Zuhdi</td>
+        <td class="alamat">Cirebon</td>
+        <td class="hapus" id="hapus__7">Hapus</td>
+      </tr>
+      
+    </table>
+  </div>
+<div>
+  <script>
+       $(document).ready(function(){
+         $('.nama_mhs').click(function(){
+        //alert(0)
+        let isi = $(this).text();
+        let yakin = confirm('mau ubah nama? ');
+        if(!yakin)return;
+        let isi2 = prompt('ubah dengan:', isi);
+       // return
+       $(this).text(isi2);
+       //$('.nama_mhs').text(isi)
+       })
+       //alamat
+       $('.Alamat').click(function(){
+         let rumah = $(this).text();
+         let bener = confirm('mau ubah alamat? ')
+         if(!bener) return;
+         //alert('alamat')
+         let rumah2 = prompt('ubah alamat :',rumah);
+         if(!rumah2) return;
+         $(this).text(rumah2);
+       //  return;
+        // $('.Alamat').text(rumah2);
+       })
+       $('.hapus').click(function(){
+        //alert(45)
+        let isi = $(this).text();
+        let yakin = confirm(" Yakin mau hapus? ")
+        if(yakin == true) {
+          alert('oke')
+        }
+        //alert('oke')
+        if(!yakin) {
+          alert('batal menghapus');
+          return
+        }
+        let id = $(this).prop('id');
+        let rid = id.split('__');
+        let baris_ke = rid[1];
+        
+        $('#row__'+baris_ke).fadeOut()
+       })
+      })
+      function darkMode() {
+        const dark = document.body
+        dark.classList.toggle('dark');
+        if(span1.style.left == "0px" ){
+          span1.style.transition = ".2s"
+          span1.style.left = "30px"
+        }
+        else { span1.style.left = "0px" 
+        }
+        
+      }
+  </script>
+</div>
+</body>
+
+</html>
